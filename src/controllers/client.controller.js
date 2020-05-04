@@ -1,5 +1,5 @@
 const Client = require('../models/client.model');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         const client = new Client({

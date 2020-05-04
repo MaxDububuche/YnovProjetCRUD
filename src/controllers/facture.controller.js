@@ -1,5 +1,5 @@
 const Facture = require('../models/facture.model');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         const facture = new Facture({

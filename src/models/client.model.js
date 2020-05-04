@@ -22,4 +22,4 @@ const clientSchema = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Client', ClientSchema);
+module.exports = mongoose.model('Client', clientSchema);

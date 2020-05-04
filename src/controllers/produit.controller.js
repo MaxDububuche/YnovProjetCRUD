@@ -1,5 +1,5 @@
 const Produit = require('../models/produit.model');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         const produit = new Produit({
