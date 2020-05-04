@@ -7,7 +7,7 @@ const produitSchema = new Schema({
         required: true,
     },
     stock: {
-        type: Integer,
+        type: Number,
         required: true,
     },
     photo: {
@@ -24,4 +24,4 @@ const produitSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Produit', produitSchema);

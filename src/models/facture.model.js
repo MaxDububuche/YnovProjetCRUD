@@ -11,7 +11,7 @@ const factureSchema = new Schema({
         required: true
     },
     payer: {
-        type: Booleean,
+        type: Boolean,
         required: true
     },
     datepaiment: {
@@ -19,7 +19,7 @@ const factureSchema = new Schema({
         required: true
     },
     prix: {
-        type: Int,
+        type: Number,
         required: true
     },
     reference: {
