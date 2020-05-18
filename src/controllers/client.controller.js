@@ -42,10 +42,10 @@ exports.updateOne = (req, res) => {
     ).then(client => {
         if (!client) {
             return res.status(404).send({
-                message: "Pas de Golf a l'id suivant" + req.params.id
+                message: "Pas de Client a l'id suivant" + req.params.id
             })
         }
-        client.findById(req.params.id)
+        Client.findById(req.params.id)
             .then(newClient => {
                 res.send({
                     new_client: newClient,

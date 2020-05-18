@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/api/v1', apiRouter);
+app.use('/fruitjuice', apiRouter);
 
 exports.start = () => {
     let port = config.port;
