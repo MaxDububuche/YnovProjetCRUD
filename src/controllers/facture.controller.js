@@ -47,7 +47,7 @@ exports.updateOne = (req, res) => {
                 message: "Pas de Golf a l'id suivant" + req.params.id
             })
         }
-        facture.findById(req.params.id)
+        Facture.findById(req.params.id)
             .then(newFacture => {
                 res.send({
                     new_facture: newFacture,
