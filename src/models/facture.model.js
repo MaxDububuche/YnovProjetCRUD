@@ -11,7 +11,7 @@ const factureSchema = new Schema({
         required: true
     },
     payer: {
-        type: Boolean,
+        type: String,
         required: true
     },
     datepaiment: {

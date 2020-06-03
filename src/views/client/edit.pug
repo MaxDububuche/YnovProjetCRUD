@@ -1,0 +1,26 @@
+html
+  head
+    title Editing
+      link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+
+  body
+    //- navbar
+    ul.nav.nav-pills.nav-fill
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
+      li.nav-item
+        a.nav-link.active(href='http://localhost:3000/fruitjuice/clients') Clients
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
+
+    block client
+      form(id="client" action=`/fruitjuice/clientupdate/${id}` method="post")
+          input(type="text", name="prenom", value=" ", placeholder="Prenom")
+          br
+          input(type="text", name="nom", value=" ", placeholder="Nom")
+          br
+          input(type="text", name="adresse", value=" ", placeholder="adresse")
+          br
+          input(type="submit" value="Connected")

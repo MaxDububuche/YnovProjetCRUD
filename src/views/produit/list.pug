@@ -1,0 +1,53 @@
+html
+  head
+    title MyClients
+    //- link(rel='stylesheet', href='/css/bootstrap.min.css')
+
+    //- navbar
+    ul.nav.nav-pills.nav-fill
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
+      li.nav-item
+        a.nav-link.active(href='http://localhost:3000/fruitjuice/clients') Clients
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
+      li.nav-item
+        a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
+
+    //- background and tab
+    .card.bg-dark.text-white
+      img.card-img(src='../../public/images/fruitjuice_background.jpg', alt='background')
+      .card-img-overlay.col.col-lg-8.offset-lg-2
+        //- searching by id
+        form(method='POST', action=`/fruitjuice/produitfindall`)
+
+        table.table.table-striped.table-dark
+          thead
+            tr
+              th(scope='col') #
+              th(scope='col') Nom
+              th(scope='col') Stock
+              th(scope='col') Prix
+              th(scope='col') Reference
+              th
+              th
+                button.btn.btn-primary(type = 'button'  onclick=`window.location.href='http://localhost:3000/fruitjuice/produit/add'`) +
+
+
+          //- all produits
+          tbody
+          each produit in produits
+            tr
+              th(scope='row')= produit.id
+              td= produit.nom
+              td= produit.stock
+              td= produit.photo
+              td= produit.prix
+              td= produit.reference
+              //- td= produit.datecreation.toLocaleString("fr-FR")
+              
+              td
+                form(method='POST', action=`/fruitjuice/produitdelete/${produit._id}`)
+                  button.btn.btn-danger(type='submit') DELETE
+              td
+                button.btn.btn-info(type = 'button'  onclick=`window.location.href='http://localhost:3000/fruitjuice/produit/edit/${produit._id}'`) EDIT

@@ -74,3 +74,16 @@ exports.deleteOne = (req, res) => {
             })
         })
 }
+
+exports.findall = (req, res) => {
+    Facture.find()
+    .then(facture => {
+        res.send(facture);
+    })
+    .catch(err => {
+        return res.status(500).send({
+            message: err.message
+        })
+    })
+    
+}

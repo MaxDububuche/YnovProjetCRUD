@@ -64,3 +64,16 @@ exports.login = (req, res) => {
         }
     )
 }
+
+exports.findall = (req, res) => {
+    User.find()
+    .then(user => {
+        res.send(user);
+    })
+    .catch(err => {
+        return res.status(500).send({
+            message: err.message
+        })
+    })
+    
+}

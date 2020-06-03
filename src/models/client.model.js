@@ -13,10 +13,10 @@ const clientSchema = new Schema({
     adresse: {
         type: String,
         required: true,
-    },
-    datecreation: {
-        type: String
-    },
+    }
+    // datecreation: {
+    //     type: String
+    // },
 }, {
     timestamps: true
 });

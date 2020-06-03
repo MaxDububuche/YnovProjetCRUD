@@ -1,0 +1,29 @@
+html
+    head
+    title Register
+    //- link(rel='stylesheet', href='/css/bootstrap.min.css')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    body
+    //- navbar
+    ul.nav.nav-pills.nav-fill
+        li.nav-item
+            a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
+        li.nav-item
+            a.nav-link.active(href='http://localhost:3000/fruitjuice/users') Users
+        li.nav-item
+            a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
+        li.nav-item
+            a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
+    
+    block client
+        form(id="user" action="/fruitjuice/auth/login" method="post")
+            input(type="text", name="mail", value="", placeholder="mail")
+            br
+            input(type="text", name="motdepasse", value="", placeholder="motdepasse")
+            br
+            input(type="submit" value="Login")
+
+    
+    

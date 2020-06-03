@@ -1,12 +1,14 @@
 const Client = require('../models/client.model');
+
 //const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
+    console.log(req.body);
         const client = new Client({
                 nom: req.body.nom,
                 prenom: req.body.prenom,
-                adresse: req.body.adresse,
-                datecreation: req.body.datecreation
+                adresse: req.body.adresse
+                // datecreation: req.body.datecreation
             })
             client.save()
             .then(data => {
@@ -34,6 +36,15 @@ exports.findOne = (req, res) => {
             })
         })
 }
+
+
+// exports.findAll = (req, res) => {
+//     Client.findAll()
+//     .then(
+//         res.send(/)
+//     )
+// }
+
 
 exports.updateOne = (req, res) => {
     Client.findByIdAndUpdate(
@@ -71,4 +82,17 @@ exports.deleteOne = (req, res) => {
                 message: `client avec l'id ${req.params.id} supprmié`
             })
         })
+}
+
+exports.findall = (req, res) => {
+    Client.find()
+    .then(client => {
+        res.send(client);
+    })
+    .catch(err => {
+        return res.status(500).send({
+            message: err.message
+        })
+    })
+    
 }
