@@ -38,14 +38,6 @@ exports.findOne = (req, res) => {
 }
 
 
-// exports.findAll = (req, res) => {
-//     Client.findAll()
-//     .then(
-//         res.send(/)
-//     )
-// }
-
-
 exports.updateOne = (req, res) => {
     Client.findByIdAndUpdate(
         req.params.id,

@@ -1,5 +1,6 @@
 html
   head
+
     //- Required meta tags
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -9,21 +10,38 @@ html
     link(rel='stylesheet', href='../../public/css/style.css')
     link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
 
-    title Adding
-      
-  body
-    //-navbar
+    title Mes produits
+    
+  body  
+    //- navbar
     ul.nav.nav-pills.nav-fill
       li.nav-item
-        a.nav-link.active(href='http://localhost:3000/fruitjuice/home') Home
+        a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
       li.nav-item
         a.nav-link(href='http://localhost:3000/fruitjuice/clients') Clients
       li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
+        a.nav-link.produit(href='http://localhost:3000/fruitjuice/produits') Produits
       li.nav-item
         a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
 
-//-register
-a.nav-link(href='http://localhost:3000/fruitjuice/register') Register
-a.nav-link(href='http://localhost:3000/fruitjuice/login') Login
 
+    form(action=`/fruitjuice/produitfind/${id}` method="GET")
+      table.table.table-striped.table-dark
+        thead
+          tr
+            th(scope='col') #
+              th(scope='col') Nom
+              th(scope='col') Stock
+              th(scope='col') Photo
+              th(scope='col') Prix
+              th(scope='col') Reference
+        //- one produit
+        tbody
+          tr
+            th(scope='row')= produit.id
+              td= produit.nom
+              td= produit.stock
+              td= produit.photo
+              td= produit.prix
+              td= produit.reference
+            

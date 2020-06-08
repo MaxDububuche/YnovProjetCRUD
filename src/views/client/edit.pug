@@ -1,7 +1,16 @@
 html
   head
+
+    //- Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    //- Bootstrap CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+    link(rel='stylesheet', href='../../public/css/style.css')
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+
     title Editing
-      link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
 
   body
     //- navbar
@@ -17,10 +26,18 @@ html
 
     block client
       form(id="client" action=`/fruitjuice/clientupdate/${id}` method="post")
-          input(type="text", name="prenom", value=" ", placeholder="Prenom")
-          br
-          input(type="text", name="nom", value=" ", placeholder="Nom")
-          br
-          input(type="text", name="adresse", value=" ", placeholder="adresse")
-          br
-          input(type="submit" value="Connected")
+        .d-flex.flex-column
+          .form-col
+            .form-group.col-md-3
+              label(for='prenom') Prenom
+              input#inputPrenom.form-control(type='text', name="prenom", value=" ", placeholder="prenom")
+            .form-group.col-md-3
+                label(for='nom') Nom
+                input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
+            .form-group.col-md-3
+                label(for='adresse') adresse
+                input#inputAdresse.form-control(type='text',name="adresse", value=" ",  placeholder=`adresse`)
+
+        button.btn.btn-primary(type='submit', value="modifier") valider
+
+        

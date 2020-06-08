@@ -15,6 +15,13 @@ router.get('/produit/add', function (req, res) {
     res.render('produit/add');
 });
 
+router.get('/produit/:id', function (req, res) {
+    axios
+    .get(`http://localhost:3000/fruitjuice/produitfind/${req.params.id}`)
+    .then(unwrapResponseData)
+    .then(produit => res.render('produit/listone', {produit: produit}));
+});
+
 router.get('/produit/edit/:id', function (req, res) {
     res.render('produit/edit', { id: req.params.id });
 });

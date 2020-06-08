@@ -1,16 +1,7 @@
-body, html {
-    height: 100%;
-}
-
-.bg {
-/* The image used */
-background-image: url("../images/fruitjuice_background.jpg");
-
-/* Full height */
-height: 100%;
-
-/* Center and scale the image nicely */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
+/* this is body style */
+body {
+    /* height: 100%; */
+    /* background-image: url("../images/fruitjuice_background.jpg"); */
+    /* background-repeat: no-repeat, repeat; */
+    background-color: #cde05c;
+    } 

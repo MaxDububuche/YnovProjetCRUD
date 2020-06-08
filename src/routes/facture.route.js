@@ -15,6 +15,13 @@ router.get('/facture/add', function (req, res) {
     res.render('facture/add');
 });
 
+router.get('/facture/:id', function (req, res) {
+    axios
+    .get(`http://localhost:3000/fruitjuice/facturefind/${req.params.id}`)
+    .then(unwrapResponseData)
+    .then(facture => res.render('facture/listone', {facture: facture}));
+});
+
 router.get('/facture/edit/:id', function (req, res) {
     res.render('facture/edit', { id: req.params.id });
 });

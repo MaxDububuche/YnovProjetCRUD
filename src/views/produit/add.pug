@@ -1,8 +1,17 @@
 
 html
   head
+
+    //- Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    //- Bootstrap CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+    link(rel='stylesheet', href='../../public/css/style.css')
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+
     title Adding
-      link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
 
   body
     //- navbar
@@ -10,31 +19,31 @@ html
       li.nav-item
         a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
       li.nav-item
-        a.nav-link.active(href='http://localhost:3000/fruitjuice/clients') Clients
+        a.nav-link(href='http://localhost:3000/fruitjuice/clients') Clients
       li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
+        a.nav-link.active(href='http://localhost:3000/fruitjuice/produits') Produits
       li.nav-item
         a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
     
-    .card.bg-dark.text-white
-      //- img.card-img(src='/images/market_background.jpg', alt='background')
-      .card-img-overlay.col.col-lg-8.offset-lg-2
-        form(method='post', id="produit" action=`/fruitjuice/produitcreate`)
-          .form-row
-            .form-group.col-md-3
-              label(for='nom') Nom
-              input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
-            .form-group.col-md-3
-              label(for='stock') Stock
-              input#inputStock.form-control(type='text', name="stock", value=" ", placeholder=`stock`)
-            .form-group.col-md-3
-              label(for='photo') Photo
-              input#inputPhoto.form-control(type='text', name="photo", value=" ", placeholder=`photo`)
-            .form-group.col-md-3
-              label(for='prix') Prix
-              input#inputPrix.form-control(type='text',name="prix", value=" ",  placeholder=`prix`)
-            .form-group.col-md-3
-              label(for='reference') Reference
-              input#inputReference.form-control(type='text',name="reference", value=" ",  placeholder=`reference`)
-            
-            button.btn.btn-primary(type='submit', value="connected") Add
+    //- .card.bg-dark.text-white
+    //-   //- img.card-img(src='/images/market_background.jpg', alt='background')
+    //-   .card-img-overlay.col.col-lg-8.offset-lg-2
+    form(method='post', id="produit" action=`/fruitjuice/produitcreate`)
+      .form-row
+        .form-group.col-md-3
+          label(for='nom') Nom
+          input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
+        .form-group.col-md-3
+          label(for='stock') Stock
+          input#inputStock.form-control(type='text', name="stock", value=" ", placeholder=`stock`)
+        .form-group.col-md-3
+          label(for='photo') Photo
+          input#inputPhoto.form-control(type='text', name="photo", value=" ", placeholder=`photo`)
+        .form-group.col-md-3
+          label(for='prix') Prix
+          input#inputPrix.form-control(type='text',name="prix", value=" ",  placeholder=`prix`)
+        .form-group.col-md-3
+          label(for='reference') Reference
+          input#inputReference.form-control(type='text',name="reference", value=" ",  placeholder=`reference`)
+        
+        button.btn.btn-primary(type='submit', value="connected") Add
