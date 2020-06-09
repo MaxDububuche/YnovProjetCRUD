@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const produit = require('../controllers/produit.controller');
 const axios = require('axios');
-//const verifyToken = require('../helpers/verifyToken');
 
 
 router.post('/produitcreate', produit.create);
@@ -10,6 +9,7 @@ router.get('/produitfind/:id', produit.findOne);
 router.get('/produitfindall', produit.findall);
 router.post('/produitupdate/:id', produit.updateOne);
 router.post('/produitdelete/:id', produit.deleteOne);
+router.post('/produitsearch', produit.search);
 
 router.get('/produit/add', function (req, res) {
     res.render('produit/add');

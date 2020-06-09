@@ -1,27 +1,102 @@
+doctype html
 html
   head
-    //- Required meta tags
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-
-    //- Bootstrap CSS
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
+    title Fruit Juice Home
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    base(href='/')
     link(rel='stylesheet', href='../../public/css/style.css')
-    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
-
-    title Adding
-      
+    style.
+      body {font-family: "Times New Roman", Georgia, Serif;}
+      h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+      }
   body
-    //-navbar
-    ul.nav.nav-pills.nav-fill
-      li.nav-item
-        a.nav-link.active(href='http://localhost:3000/fruitjuice/home') Home
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/clients') Clients
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
+    // Navbar (sit on top)
+    .w3-top
+      .w3-bar.w3-white.w3-padding.w3-card(style='letter-spacing:4px;')
+        a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Fruit Juice 
+        // Right-sided navbar links. Hide them on small screens
+        .w3-right.w3-hide-small
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Home
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/clients') Clients
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/produits') Produits
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/factures') Factures
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/register') Inscription
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/login') Connexion
+    // Header
+    header#home.w3-display-container.w3-content.w3-wide(style='max-width:1600px;min-width:500px')
+      img.w3-image(src='../../public/images/fruitjuice_background.jpg', alt='Jus de fruit', width='1600', height='800')
+      .w3-display-bottomleft.w3-padding-large.w3-opacity
+        h1.w3-xxlarge Fruit Juice
+    // Page content
+    .w3-content(style='max-width:1100px')
+      // About Section
+      #about.w3-row.w3-padding-64
+        .w3-col.m6.w3-padding-large.w3-hide-small
+          img.w3-round.w3-image.w3-opacity-min(src='../../public/images/fruitjuice_background.jpg', alt='Jus de fruit', width='600', height='750')
+        .w3-col.m6.w3-padding-large
+          h1.w3-center About Fruit Juice
+          br
+          h5.w3-center Tradition since 2020
+          p.w3-large
+            | Fruit Juice was founded in blabla by Mrs. DIOP and M. DUBUCHE in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use 
+            span.w3-tag.w3-light-grey seasonal
+            |  ingredients.
+          p.w3-large.w3-text-grey.w3-hide-medium
+            | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      hr
+      // Menu Section
+      #menu.w3-row.w3-padding-64
+        .w3-col.l6.w3-padding-large
+          h1.w3-center Our Product
+          br
+          h4 Ananas Cocktail
+          p.w3-text-grey Assortment of fresh baked fruit breads and muffins 5.50
+          br
+          h4 Honey Almond Granola with Fruits
+          p.w3-text-grey Natural cereal of honey toasted oats, raisins, almonds and dates 7.00
+          br
+          h4 Framboise Waffle
+          p.w3-text-grey Vanilla flavored batter with malted flour 7.50
+          br
+          h4 Scrambled eggs
+          p.w3-text-grey Scrambled eggs, roasted red pepper and garlic, with green onions 7.50
+          br
+          h4 Blueberry 
+          p.w3-text-grey With syrup, butter and lots of berries 8.50
+        .w3-col.l6.w3-padding-large
+          img.w3-round.w3-image.w3-opacity-min(src='/w3images/tablesetting.jpg', alt='Menu', style='width:100%')
+      hr
+      // Contact Section
+      #contact.w3-container.w3-padding-64
+        h1 Contact
+        br
+        p
+          | We offer full-service Fruit Juice for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.
+        p.w3-text-blue-grey.w3-large
+          b Catering Service, 42nd Living St, 43043 New York, NY
+        p
+          | You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:
+        form(action='/action_page.php', target='_blank')
+          p
+            input.w3-input.w3-padding-16(type='text', placeholder='Name', required='', name='Name')
+          p
+            input.w3-input.w3-padding-16(type='number', placeholder='How many people', required='', name='People')
+          p
+            input.w3-input.w3-padding-16(type='datetime-local', placeholder='Date and time', required='', name='date', value='2017-11-16T20:00')
+          p
+            input.w3-input.w3-padding-16(type='text', placeholder='Message \ Special requirements', required='', name='Message')
+          p
+            button.w3-button.w3-light-grey.w3-section(type='submit') SEND MESSAGE
+      // End page content
+      // Footer
+      footer.w3-center.w3-light-grey.w3-padding-32
+        p
+          | Powered by 
+          a.w3-hover-text-green(href='https://www.w3schools.com/w3css/default.asp', title='W3.CSS', target='_blank') Fruit Juice
 
 //-register
 a.nav-link(href='http://localhost:3000/fruitjuice/register') Register

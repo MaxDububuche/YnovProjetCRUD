@@ -9,6 +9,7 @@ router.get('/clientfind/:id', client.findOne);
 router.get('/clientfindall', client.findall);
 router.post('/clientupdate/:id', client.updateOne);
 router.post('/clientdelete/:id', client.deleteOne);
+router.post('/clientsearch', client.search);
 
 
 router.get('/client/add', function (req, res) {

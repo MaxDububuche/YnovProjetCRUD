@@ -1,7 +1,6 @@
 const Client = require('../models/client.model');
 
-//const bcrypt = require('bcrypt');
-
+// - Add
 exports.create = (req, res) => {
     console.log(req.body);
         const client = new Client({
@@ -12,6 +11,7 @@ exports.create = (req, res) => {
             })
             client.save()
             .then(data => {
+                res.redirect('http://localhost:3000/fruitjuice/clients');
                 res.send(data);
             }).catch(err => {
                 res.status(500).send({
@@ -19,6 +19,7 @@ exports.create = (req, res) => {
                 })
             })
     }
+
 
 exports.findOne = (req, res) => {
     Client.findById(req.params.id)
@@ -50,6 +51,7 @@ exports.updateOne = (req, res) => {
         }
         Client.findById(req.params.id)
             .then(newClient => {
+                res.redirect('http://localhost:3000/fruitjuice/clients');
                 res.send({
                     new_client: newClient,
                     old_client: client
@@ -70,6 +72,7 @@ exports.deleteOne = (req, res) => {
                     message: "Pas de client a l'id suivant" + req.params.id
                 })
             }
+            res.redirect('http://localhost:3000/fruitjuice/clients');
             res.send({
                 message: `client avec l'id ${req.params.id} supprmié`
             })
@@ -87,4 +90,22 @@ exports.findall = (req, res) => {
         })
     })
     
+}
+
+exports.search = (req,res) => {
+    Client.findById(req.body.id)
+        .then(client => {
+            if (!client) {
+                return res.status(404).send({
+                    message: "Pas de client a l'id suivant" + req.body.id
+                });
+            }
+            res.redirect(`http://localhost:3000/fruitjuice/client/${req.body.id}`);
+            res.send(client);
+        })
+        .catch(err => {
+            return res.status(500).send({
+                message: err.message
+            })
+        })
 }

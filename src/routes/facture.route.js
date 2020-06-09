@@ -10,6 +10,7 @@ router.get('/facturefind/:id', facture.findOne);
 router.get('/facturefindall', facture.findall);
 router.post('/factureupdate/:id', facture.updateOne);
 router.post('/facturedelete/:id', facture.deleteOne);
+router.post('/facturesearch', facture.search);
 
 router.get('/facture/add', function (req, res) {
     res.render('facture/add');

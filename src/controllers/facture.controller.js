@@ -1,5 +1,4 @@
 const Facture = require('../models/facture.model');
-//const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         const facture = new Facture({
@@ -12,6 +11,7 @@ exports.create = (req, res) => {
             })
         facture.save()
             .then(data => {
+                res.redirect('http://localhost:3000/fruitjuice/factures');
                 res.send(data);
             }).catch(err => {
                 res.status(500).send({
@@ -49,6 +49,7 @@ exports.updateOne = (req, res) => {
         }
         Facture.findById(req.params.id)
             .then(newFacture => {
+                res.redirect('http://localhost:3000/fruitjuice/factures');
                 res.send({
                     new_facture: newFacture,
                     old_facture: facture
@@ -69,6 +70,7 @@ exports.deleteOne = (req, res) => {
                     message: "Pas de Facture a l'id suivant" + req.params.id
                 })
             }
+            res.redirect('http://localhost:3000/fruitjuice/factures');
             res.send({
                 message: `Facture avec l'id ${req.params.id} supprmié`
             })
@@ -86,4 +88,23 @@ exports.findall = (req, res) => {
         })
     })
     
+}
+
+
+exports.search = (req,res) => {
+    Facture.findById(req.body.id)
+        .then(facture => {
+            if (!facture) {
+                return res.status(404).send({
+                    message: "Pas de facture a l'id suivant" + req.body.id
+                });
+            }
+            res.redirect(`http://localhost:3000/fruitjuice/facture/${req.body.id}`);
+            res.send(facture);
+        })
+        .catch(err => {
+            return res.status(500).send({
+                message: err.message
+            })
+        })
 }

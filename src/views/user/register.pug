@@ -1,40 +1,62 @@
+doctype html
 html
   head
-    //- Required meta tags
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    base(href='/')
 
+    title Inscription
+    link(rel='icon', href='../../public/images/logo_fj.png', type='image/png')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/style.css')
+
+
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    style.
+      body {font-family: "Times New Roman", Georgia, Serif;}
+      h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+      }
     //- Bootstrap CSS
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
     link(rel='stylesheet', href='../../public/css/style.css')
     link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
 
-    title Register
     
-  body
-    .bg
-    p.py-5.text-center
-      | This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.
-
-    //- navbar
-    ul.nav.nav-pills.nav-fill
-      li.nav-item
-        a.nav-link(href='http://localhost:3000') Home
-      li.nav-item
-        a.nav-link.active(href='http://localhost:3000/users') Users
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/produits') Produits
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/factures') Factures
-    
-    block client
-      form(id="user" action="/fruitjuice/auth/register" method="post")
-          input(type="text", name="prenom", value="", placeholder="Prenom")
-          br
-          input(type="text", name="nom", value="", placeholder="Nom")
-          br
-          input(type="text", name="mail", value="", placeholder="mail")
-          br
-          input(type="text", name="motdepasse", value="", placeholder="motdepasse")
-          br
-          input(type="submit" value="Créer")
+  body  
+    // Navbar (sit on top)
+    .w3-top
+      .w3-bar.w3-white.w3-padding.w3-card(style='letter-spacing:4px;')
+        a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Fruit Juice 
+        // Right-sided navbar links. Hide them on small screens
+        .w3-right.w3-hide-small
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Home
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/clients') Clients
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/produits') Produits
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/factures') Factures
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/register') Inscription
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/login') Connexion
+    // Header
+    header#home.w3-display-container.w3-content.w3-wide(style='max-width:1600px;min-width:500px')
+      img.w3-image(src='/images/logo_fj.jpg', alt='Hamburger Catering', width='1600', height='800')
+      .w3-display-bottomleft.w3-padding-large.w3-opacity
+        h1.w3-xxlarge Fruit Juice
+  
+    div(style='margin-top:75px;')
+      block client
+        form(id="user" action="/fruitjuice/auth/register" method="post")
+          .form-col
+            .form-group.col-md-3
+              label(for='nom') Nom
+              input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
+            .form-group.col-md-3
+              label(for='prenom') Prenom
+              input#inputPrenom.form-control(type='text', name="prenom", value=" ", placeholder=`prenom`)
+            .form-group.col-md-3
+              label(for='mail') Mail
+              input#inputMail.form-control(type='text', name="mail", value=" ", placeholder=`mail`)
+            .form-group.col-md-3
+              label(for='motdepasse') Mot de passe
+              input#inputMotdepasse.form-control(type='text', name="motdepasse", value=" ", placeholder=`motdepasse`)
+            
+            button.btn.btn-primary(type='submit', value="céer") Créer

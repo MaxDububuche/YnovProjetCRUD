@@ -1,43 +1,56 @@
+doctype html
 html
   head
-
-    //- Required meta tags
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-
+    title Edit
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    style.
+      body {font-family: "Times New Roman", Georgia, Serif;}
+      h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+      }
     //- Bootstrap CSS
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk', crossorigin='anonymous')
-    link(rel='stylesheet', href='../../public/css/style.css')
+    //- link(rel='stylesheet', href='../../public/css/style.css')
     link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
 
-    title Editing
 
   body
-    //- navbar
-    ul.nav.nav-pills.nav-fill
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/home') Home
-      li.nav-item
-        a.nav-link.active(href='http://localhost:3000/fruitjuice/clients') Clients
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/produits') Produits
-      li.nav-item
-        a.nav-link(href='http://localhost:3000/fruitjuice/factures') Factures
+    // Navbar (sit on top)
+    .w3-top
+      .w3-bar.w3-white.w3-padding.w3-card(style='letter-spacing:4px;')
+        a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Fruit Juice 
+        // Right-sided navbar links. Hide them on small screens
+        .w3-right.w3-hide-small
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/home') Home
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/clients') Clients
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/produits') Produits
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/factures') Factures
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/register') Inscription
+          a.w3-bar-item.w3-button(href='http://localhost:3000/fruitjuice/login') Connexion
+    // Header
+    header#home.w3-display-container.w3-content.w3-wide(style='max-width:1600px;min-width:500px')
+      img.w3-image(src='/w3images/hamburger.jpg', alt='Hamburger Catering', width='1600', height='800')
+      .w3-display-bottomleft.w3-padding-large.w3-opacity
+        h1.w3-xxlarge Le Catering
+    
+    div(style='margin-top:75px;')
+      block client
+        form(id="client" action=`/fruitjuice/clientupdate/${id}` method="post")
+          .d-flex.flex-column
+            .form-col
+              .form-group.col-md-3
+                label(for='prenom') Prenom
+                input#inputPrenom.form-control(type='text', name="prenom", value=" ", placeholder="prenom")
+              .form-group.col-md-3
+                  label(for='nom') Nom
+                  input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
+              .form-group.col-md-3
+                  label(for='adresse') adresse
+                  input#inputAdresse.form-control(type='text',name="adresse", value=" ",  placeholder=`adresse`)
 
-    block client
-      form(id="client" action=`/fruitjuice/clientupdate/${id}` method="post")
-        .d-flex.flex-column
-          .form-col
-            .form-group.col-md-3
-              label(for='prenom') Prenom
-              input#inputPrenom.form-control(type='text', name="prenom", value=" ", placeholder="prenom")
-            .form-group.col-md-3
-                label(for='nom') Nom
-                input#inputNom.form-control(type='text', name="nom", value=" ", placeholder=`nom`)
-            .form-group.col-md-3
-                label(for='adresse') adresse
-                input#inputAdresse.form-control(type='text',name="adresse", value=" ",  placeholder=`adresse`)
+          button.btn.btn-primary(type='submit', value="modifier") valider
 
-        button.btn.btn-primary(type='submit', value="modifier") valider
-
-        
+          

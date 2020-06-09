@@ -3,6 +3,7 @@ const config = require('../configs/server.config');
 const bodyParser = require('body-parser');
 const apiRouter = require('../routes');
 const app = express();
+const path = require('path')
 
 // support parsing of application/json type post data
 app.use(bodyParser.json());
@@ -18,12 +19,7 @@ app.use(bodyParser.json());
 
 app.use('/fruitjuice', apiRouter);
 
-// app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
-// app.use(express.static('public'))
-
-app.use(express.static(__dirname + '/public'));
-
-
+app.use(express.static('public'))
 
 exports.start = () => {
     let port = config.port;
