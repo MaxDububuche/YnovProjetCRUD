@@ -23,6 +23,7 @@ exports.create = (req, res) => {
                     expiresIn: 86400
                 }
             )
+            res.redirect('http://localhost:3000/fruitjuice/home');
             res.send({
                 auth: true,
                 token: usertoken,
